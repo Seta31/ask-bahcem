@@ -252,7 +252,7 @@
   <canvas id="petals"></canvas>
 
   <audio id="bgMusic" loop preload="auto">
-    <source src="l-italiano.mp3" type="audio/mpeg">
+    <source src="sara-perche-ti-amo.mp3" type="audio/mpeg">
   </audio>
 
   <div class="container">
@@ -456,39 +456,37 @@
     // Müzik
     const music = document.getElementById('bgMusic');
     const btnMusic = document.getElementById('btnMusic');
-    let isPlaying = false;
 
     music.volume = 0.7;
-    music.load();
 
-    btnMusic.addEventListener('click', function() {
-      if (isPlaying) {
-        music.pause();
-        isPlaying = false;
-        btnMusic.classList.remove('playing');
-        btnMusic.innerHTML = 'L’Italiano 🎵';
-      } else {
-        const playPromise = music.play();
-        if (playPromise !== undefined) {
-          playPromise
-            .then(() => {
-              isPlaying = true;
-              btnMusic.classList.add('playing');
-              btnMusic.innerHTML = 'Durdur 🎵 <span class="music-wave"><span></span><span></span><span></span><span></span></span>';
-            })
-            .catch((error) => {
-              console.error('Müzik hatası:', error);
-              alert('Müzik çalınamadı. Konsolu kontrol et (F12).');
-            });
+    function setMusicButton(playing) {
+      btnMusic.classList.toggle('playing', playing);
+      btnMusic.innerHTML = playing
+        ? 'Durdur 🎵 <span class="music-wave"><span></span><span></span><span></span><span></span></span>'
+        : 'L’Italiano 🎵';
+      btnMusic.setAttribute('aria-pressed', playing ? 'true' : 'false');
+    }
+
+    // Tarayıcılar kullanıcı etkileşimi olmadan ses başlatmayı engeller.
+    // Bu yüzden müzik yalnızca butona basıldığında başlatılır.
+    btnMusic.addEventListener('click', async () => {
+      try {
+        if (music.paused) {
+          await music.play();
+        } else {
+          music.pause();
         }
+      } catch (error) {
+        console.error('Müzik hatası:', error);
+        alert('Müzik dosyası bulunamadı veya çalınamadı. MP3 dosyasının index.html ile aynı klasörde olduğundan emin ol.');
       }
     });
 
-    music.addEventListener('ended', () => {
-      isPlaying = false;
-      btnMusic.classList.remove('playing');
-      btnMusic.innerHTML = 'L’Italiano 🎵';
-    });
+    music.addEventListener('play', () => setMusicButton(true));
+    music.addEventListener('pause', () => setMusicButton(false));
+    music.addEventListener('ended', () => setMusicButton(false));
+
+    setMusicButton(false);
 
     setInterval(() => {
       if (Math.random() > 0.7) {
