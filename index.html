@@ -17,9 +17,7 @@
       --deep-rose: #e85a7a;
       --text: #5a3d4a;
     }
-
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
       min-height: 100vh;
       background: linear-gradient(135deg, var(--cream) 0%, var(--soft-pink) 40%, var(--lavender) 100%);
@@ -28,12 +26,10 @@
       overflow-x: hidden;
       position: relative;
     }
-
     #petals {
       position: fixed; top: 0; left: 0; width: 100%; height: 100%;
       pointer-events: none; z-index: 1;
     }
-
     .orb {
       position: fixed; border-radius: 50%; filter: blur(60px);
       opacity: 0.35; z-index: 0; animation: floatOrb 18s ease-in-out infinite;
@@ -41,49 +37,40 @@
     .orb1 { width: 320px; height: 320px; background: var(--pink); top: -80px; left: -60px; }
     .orb2 { width: 280px; height: 280px; background: var(--lavender); bottom: 10%; right: -40px; animation-delay: -6s; }
     .orb3 { width: 200px; height: 200px; background: var(--peach); top: 40%; left: 60%; animation-delay: -12s; }
-
     @keyframes floatOrb {
       0%, 100% { transform: translate(0, 0) scale(1); }
       50% { transform: translate(30px, -40px) scale(1.1); }
     }
-
     .container {
       position: relative; z-index: 10; max-width: 720px;
       margin: 0 auto; padding: 40px 24px 80px; text-align: center;
     }
-
     header { margin-bottom: 36px; animation: fadeUp 1.2s ease-out; }
-
     .heart-icon {
       font-size: 2.8rem; display: inline-block;
       animation: heartbeat 1.6s ease-in-out infinite;
     }
-
     @keyframes heartbeat {
       0%, 100% { transform: scale(1); }
       15% { transform: scale(1.25); }
       30% { transform: scale(1); }
       45% { transform: scale(1.15); }
     }
-
     h1 {
       font-family: 'Great Vibes', cursive;
       font-size: clamp(2.6rem, 7.5vw, 3.9rem);
       color: var(--deep-rose); margin: 10px 0 6px;
       text-shadow: 0 2px 20px rgba(232, 90, 122, 0.25);
     }
-
     .names {
       font-family: 'Great Vibes', cursive;
       font-size: clamp(1.6rem, 4.5vw, 2.2rem);
       color: #c45a7a; margin-bottom: 8px;
     }
-
     .subtitle {
       font-family: 'Playfair Display', serif;
       font-style: italic; font-size: 1.12rem; color: #8a6a7a;
     }
-
     .letter {
       background: rgba(255, 255, 255, 0.72);
       backdrop-filter: blur(18px);
@@ -93,35 +80,29 @@
       position: relative; overflow: hidden;
       animation: fadeUp 1.4s ease-out 0.2s both;
     }
-
     .letter::before {
       content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px;
       background: linear-gradient(90deg, var(--pink), var(--lavender), var(--peach), var(--pink));
       background-size: 200% 100%; animation: shimmer 6s linear infinite;
     }
-
     @keyframes shimmer {
       0% { background-position: 0% 0; }
       100% { background-position: 200% 0; }
     }
-
     .letter-content {
       font-size: 1.13rem; line-height: 1.85; color: var(--text); text-align: left;
     }
     .letter-content p { margin-bottom: 1.05em; }
     .letter-content .highlight { color: var(--deep-rose); font-weight: 600; }
-
     .signature {
       margin-top: 26px; font-family: 'Great Vibes', cursive;
       font-size: 2rem; color: var(--deep-rose); text-align: right;
     }
-
     .actions {
       margin-top: 32px; display: flex; flex-wrap: wrap;
       gap: 12px; justify-content: center;
       animation: fadeUp 1.6s ease-out 0.4s both;
     }
-
     .btn {
       background: linear-gradient(135deg, var(--deep-rose), #f07a96);
       color: white; border: none; padding: 13px 24px;
@@ -132,12 +113,10 @@
     }
     .btn:hover { transform: translateY(-3px) scale(1.03); }
     .btn:active { transform: translateY(0) scale(0.98); }
-
     .btn.secondary {
       background: white; color: var(--deep-rose);
       border: 2px solid var(--pink);
     }
-
     .btn.music {
       background: linear-gradient(135deg, #9b6b9e, #c48bb0);
       min-width: 160px;
@@ -146,12 +125,10 @@
       background: linear-gradient(135deg, #7a4d7d, #a86a90);
       box-shadow: 0 0 0 3px rgba(155, 107, 158, 0.35);
     }
-
     .secret-messages {
       margin-top: 36px; display: grid; gap: 14px;
       animation: fadeUp 1.8s ease-out 0.5s both;
     }
-
     .msg-card {
       background: rgba(255, 255, 255, 0.55);
       border-radius: 18px; padding: 16px 20px;
@@ -169,7 +146,6 @@
     .msg-card .unlocked { display: none; color: var(--text); line-height: 1.6; }
     .msg-card.open .locked { display: none; }
     .msg-card.open .unlocked { display: block; animation: fadeIn 0.5s ease; }
-
     .flower-row {
       display: flex; justify-content: center; gap: 16px;
       margin: 32px 0 16px; flex-wrap: wrap;
@@ -184,18 +160,15 @@
     .flower:nth-child(3) { animation-delay: 0.8s; }
     .flower:nth-child(4) { animation-delay: 1.2s; }
     .flower:nth-child(5) { animation-delay: 1.6s; }
-
     @keyframes sway {
       0%, 100% { transform: rotate(-8deg) translateY(0); }
       50% { transform: rotate(8deg) translateY(-6px); }
     }
-
     footer {
       margin-top: 44px; font-size: 0.95rem; color: #9a7a8a;
       animation: fadeUp 2.2s ease-out 0.7s both;
     }
     footer span { color: var(--deep-rose); font-weight: 600; }
-
     .floating-heart {
       position: fixed; font-size: 1.4rem; pointer-events: none;
       z-index: 50; animation: floatHeart 2.8s ease-out forwards;
@@ -204,7 +177,6 @@
       0% { transform: translateY(0) scale(0.6); opacity: 1; }
       100% { transform: translateY(-180px) scale(1.3); opacity: 0; }
     }
-
     .modal-overlay {
       position: fixed; inset: 0; background: rgba(90, 40, 60, 0.45);
       backdrop-filter: blur(8px); z-index: 100;
@@ -213,7 +185,6 @@
       padding: 20px;
     }
     .modal-overlay.show { opacity: 1; pointer-events: auto; }
-
     .modal {
       background: linear-gradient(160deg, #fff 0%, var(--soft-pink) 100%);
       border-radius: 24px; padding: 36px 32px; max-width: 420px;
@@ -224,20 +195,17 @@
       position: relative;
     }
     .modal-overlay.show .modal { transform: scale(1) translateY(0); }
-
     .modal h2 {
       font-family: 'Great Vibes', cursive; font-size: 2.3rem;
       color: var(--deep-rose); margin-bottom: 12px;
     }
     .modal p { font-size: 1.08rem; line-height: 1.7; margin-bottom: 22px; }
-
     .close-btn {
       background: var(--deep-rose); color: white; border: none;
       width: 40px; height: 40px; border-radius: 50%; font-size: 1.25rem;
       cursor: pointer; position: absolute; top: 12px; right: 12px;
       display: flex; align-items: center; justify-content: center;
     }
-
     .sparkle {
       position: fixed; width: 6px; height: 6px; background: #fff;
       border-radius: 50%; box-shadow: 0 0 8px 2px rgba(255, 182, 193, 0.8);
@@ -249,13 +217,11 @@
       50% { transform: scale(1.4); opacity: 0.9; }
       100% { transform: scale(0); opacity: 0; }
     }
-
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(28px); }
       to { opacity: 1; transform: translateY(0); }
     }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
     .music-wave {
       display: none; gap: 3px; align-items: flex-end; height: 16px; margin-left: 6px;
     }
@@ -268,12 +234,10 @@
     .music-wave span:nth-child(2) { height: 12px; animation-delay: 0.15s; }
     .music-wave span:nth-child(3) { height: 8px; animation-delay: 0.3s; }
     .music-wave span:nth-child(4) { height: 14px; animation-delay: 0.45s; }
-
     @keyframes wave {
       0%, 100% { transform: scaleY(0.5); }
       50% { transform: scaleY(1); }
     }
-
     @media (max-width: 520px) {
       .letter { padding: 30px 20px; }
       .actions { flex-direction: column; align-items: center; }
@@ -289,7 +253,6 @@
 
   <audio id="bgMusic" loop preload="auto">
     <source src="l-italiano.mp3" type="audio/mpeg">
-    Tarayıcın ses dosyasını desteklemiyor.
   </audio>
 
   <div class="container">
@@ -340,15 +303,15 @@
 
     <div class="secret-messages">
       <div class="msg-card">
-        <div class="locked"><span class="emoji">🔒</span> Çiçeğim için…</div>
+        <div class="locked"><span>🔒</span> Çiçeğim için…</div>
         <div class="unlocked">Seni ilk gördüğümde kalbim daha hızlı atmaya başlamıştı. O günden beri hiç yavaşlamadı. 💗</div>
       </div>
       <div class="msg-card">
-        <div class="locked"><span class="emoji">🔒</span> Bitanem’e sözüm…</div>
+        <div class="locked"><span>🔒</span> Bitanem’e sözüm…</div>
         <div class="unlocked">Nerede olursam olayım, her zaman geri döneceğim. Çünkü evim sensin. 🏡</div>
       </div>
       <div class="msg-card">
-        <div class="locked"><span class="emoji">🔒</span> Ömrüm’e gece notu…</div>
+        <div class="locked"><span>🔒</span> Ömrüm’e gece notu…</div>
         <div class="unlocked">Bugün de seni düşündüm. Yarın da düşüneceğim. Her gün düşüneceğim. 🌙</div>
       </div>
     </div>
@@ -369,7 +332,6 @@
   </div>
 
   <script>
-    // Petals
     const canvas = document.getElementById('petals');
     const ctx = canvas.getContext('2d');
     let width, height, petals = [];
@@ -423,7 +385,6 @@
     }
     animate();
 
-    // Hearts & sparkles
     function createHeart(x, y) {
       const el = document.createElement('div');
       el.className = 'floating-heart';
@@ -458,7 +419,6 @@
       });
     });
 
-    // Modal
     const modal = document.getElementById('modal');
     const modalText = document.getElementById('modalText');
     const modalTitle = document.getElementById('modalTitle');
@@ -493,34 +453,33 @@
     document.getElementById('modalOk').onclick = () => modal.classList.remove('show');
     modal.onclick = e => { if (e.target === modal) modal.classList.remove('show'); };
 
-    // ========== MÜZİK (L'Italiano) ==========
+    // Müzik
     const music = document.getElementById('bgMusic');
     const btnMusic = document.getElementById('btnMusic');
     let isPlaying = false;
 
-    music.volume = 0.6;
+    music.volume = 0.7;
+    music.load();
 
-    btnMusic.addEventListener('click', async () => {
+    btnMusic.addEventListener('click', function() {
       if (isPlaying) {
         music.pause();
         isPlaying = false;
         btnMusic.classList.remove('playing');
         btnMusic.innerHTML = 'L’Italiano 🎵';
       } else {
-        try {
-          await music.play();
-          isPlaying = true;
-          btnMusic.classList.add('playing');
-          btnMusic.innerHTML = 'Durdur 🎵 <span class="music-wave"><span></span><span></span><span></span><span></span></span>';
-        } catch (err) {
-          console.error(err);
-          alert(
-            "Müzik çalmıyor!\n\n" +
-            "Kontrol et:\n" +
-            "1. Dosya adı tam olarak → l-italiano.mp3\n" +
-            "2. index.html ile aynı klasörde mi?\n" +
-            "3. Siteyi canlı sunucuda açıyor musun? (sadece dosyaya çift tıklayınca bazen çalışmaz)"
-          );
+        const playPromise = music.play();
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {
+              isPlaying = true;
+              btnMusic.classList.add('playing');
+              btnMusic.innerHTML = 'Durdur 🎵 <span class="music-wave"><span></span><span></span><span></span><span></span></span>';
+            })
+            .catch((error) => {
+              console.error('Müzik hatası:', error);
+              alert('Müzik çalınamadı. Konsolu kontrol et (F12).');
+            });
         }
       }
     });
@@ -531,7 +490,6 @@
       btnMusic.innerHTML = 'L’Italiano 🎵';
     });
 
-    // Arada kalp
     setInterval(() => {
       if (Math.random() > 0.7) {
         createHeart(Math.random() * innerWidth, innerHeight - 40);
