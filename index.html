@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Çiçeğim • Bitanem • Ömrüm 💕</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pink: #ff9eb5;
+      --soft-pink: #ffe4ec;
+      --lavender: #e8d5f2;
+      --peach: #ffd6c9;
+      --cream: #fff8f5;
+      --deep-rose: #e85a7a;
+      --text: #5a3d4a;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--cream) 0%, var(--soft-pink) 40%, var(--lavender) 100%);
+      font-family: 'Quicksand', sans-serif;
+      color: var(--text);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    #petals {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none; z-index: 1;
+    }
+
+    .orb {
+      position: fixed; border-radius: 50%; filter: blur(60px);
+      opacity: 0.35; z-index: 0; animation: floatOrb 18s ease-in-out infinite;
+    }
+    .orb1 { width: 320px; height: 320px; background: var(--pink); top: -80px; left: -60px; }
+    .orb2 { width: 280px; height: 280px; background: var(--lavender); bottom: 10%; right: -40px; animation-delay: -6s; }
+    .orb3 { width: 200px; height: 200px; background: var(--peach); top: 40%; left: 60%; animation-delay: -12s; }
+
+    @keyframes floatOrb {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(30px, -40px) scale(1.1); }
+    }
+
+    .container {
+      position: relative; z-index: 10; max-width: 720px;
+      margin: 0 auto; padding: 40px 24px 80px; text-align: center;
+    }
+
+    header { margin-bottom: 36px; animation: fadeUp 1.2s ease-out; }
+
+    .heart-icon {
+      font-size: 2.8rem; display: inline-block;
+      animation: heartbeat 1.6s ease-in-out infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      15% { transform: scale(1.25); }
+      30% { transform: scale(1); }
+      45% { transform: scale(1.15); }
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(2.6rem, 7.5vw, 3.9rem);
+      color: var(--deep-rose); margin: 10px 0 6px;
+      text-shadow: 0 2px 20px rgba(232, 90, 122, 0.25);
+    }
+
+    .names {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(1.6rem, 4.5vw, 2.2rem);
+      color: #c45a7a; margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-family: 'Playfair Display', serif;
+      font-style: italic; font-size: 1.12rem; color: #8a6a7a;
+    }
+
+    .letter {
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(18px);
+      border-radius: 28px; padding: 42px 36px;
+      box-shadow: 0 20px 60px rgba(232, 90, 122, 0.12);
+      border: 1px solid rgba(255, 182, 193, 0.45);
+      position: relative; overflow: hidden;
+      animation: fadeUp 1.4s ease-out 0.2s both;
+    }
+
+    .letter::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px;
+      background: linear-gradient(90deg, var(--pink), var(--lavender), var(--peach), var(--pink));
+      background-size: 200% 100%; animation: shimmer 6s linear infinite;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 0% 0; }
+      100% { background-position: 200% 0; }
+    }
+
+    .letter-content {
+      font-size: 1.13rem; line-height: 1.85; color: var(--text); text-align: left;
+    }
+    .letter-content p { margin-bottom: 1.05em; }
+    .letter-content .highlight { color: var(--deep-rose); font-weight: 600; }
+
+    .signature {
+      margin-top: 26px; font-family: 'Great Vibes', cursive;
+      font-size: 2rem; color: var(--deep-rose); text-align: right;
+    }
+
+    .actions {
+      margin-top: 32px; display: flex; flex-wrap: wrap;
+      gap: 12px; justify-content: center;
+      animation: fadeUp 1.6s ease-out 0.4s both;
+    }
+
+    .btn {
+      background: linear-gradient(135deg, var(--deep-rose), #f07a96);
+      color: white; border: none; padding: 13px 24px;
+      border-radius: 50px; font-family: 'Quicksand', sans-serif;
+      font-size: 0.98rem; font-weight: 600; cursor: pointer;
+      box-shadow: 0 8px 24px rgba(232, 90, 122, 0.35);
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .btn:hover { transform: translateY(-3px) scale(1.03); }
+    .btn:active { transform: translateY(0) scale(0.98); }
+
+    .btn.secondary {
+      background: white; color: var(--deep-rose);
+      border: 2px solid var(--pink);
+    }
+
+    .btn.music {
+      background: linear-gradient(135deg, #9b6b9e, #c48bb0);
+      min-width: 160px;
+    }
+    .btn.music.playing {
+      background: linear-gradient(135deg, #7a4d7d, #a86a90);
+      box-shadow: 0 0 0 3px rgba(155, 107, 158, 0.35);
+    }
+
+    .secret-messages {
+      margin-top: 36px; display: grid; gap: 14px;
+      animation: fadeUp 1.8s ease-out 0.5s both;
+    }
+
+    .msg-card {
+      background: rgba(255, 255, 255, 0.55);
+      border-radius: 18px; padding: 16px 20px;
+      border: 1px solid rgba(255, 182, 193, 0.4);
+      cursor: pointer; transition: all 0.35s ease; text-align: left;
+    }
+    .msg-card:hover {
+      background: rgba(255, 255, 255, 0.85);
+      transform: translateY(-2px);
+    }
+    .msg-card .locked {
+      display: flex; align-items: center; gap: 10px;
+      font-weight: 500; color: #9a7a8a;
+    }
+    .msg-card .unlocked { display: none; color: var(--text); line-height: 1.6; }
+    .msg-card.open .locked { display: none; }
+    .msg-card.open .unlocked { display: block; animation: fadeIn 0.5s ease; }
+
+    .flower-row {
+      display: flex; justify-content: center; gap: 16px;
+      margin: 32px 0 16px; flex-wrap: wrap;
+      animation: fadeUp 2s ease-out 0.6s both;
+    }
+    .flower {
+      font-size: 2.1rem; animation: sway 4s ease-in-out infinite;
+      display: inline-block; cursor: pointer; transition: transform 0.3s;
+    }
+    .flower:hover { transform: scale(1.25) rotate(12deg); }
+    .flower:nth-child(2) { animation-delay: 0.4s; }
+    .flower:nth-child(3) { animation-delay: 0.8s; }
+    .flower:nth-child(4) { animation-delay: 1.2s; }
+    .flower:nth-child(5) { animation-delay: 1.6s; }
+
+    @keyframes sway {
+      0%, 100% { transform: rotate(-8deg) translateY(0); }
+      50% { transform: rotate(8deg) translateY(-6px); }
+    }
+
+    footer {
+      margin-top: 44px; font-size: 0.95rem; color: #9a7a8a;
+      animation: fadeUp 2.2s ease-out 0.7s both;
+    }
+    footer span { color: var(--deep-rose); font-weight: 600; }
+
+    .floating-heart {
+      position: fixed; font-size: 1.4rem; pointer-events: none;
+      z-index: 50; animation: floatHeart 2.8s ease-out forwards;
+    }
+    @keyframes floatHeart {
+      0% { transform: translateY(0) scale(0.6); opacity: 1; }
+      100% { transform: translateY(-180px) scale(1.3); opacity: 0; }
+    }
+
+    .modal-overlay {
+      position: fixed; inset: 0; background: rgba(90, 40, 60, 0.45);
+      backdrop-filter: blur(8px); z-index: 100;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
+      padding: 20px;
+    }
+    .modal-overlay.show { opacity: 1; pointer-events: auto; }
+
+    .modal {
+      background: linear-gradient(160deg, #fff 0%, var(--soft-pink) 100%);
+      border-radius: 24px; padding: 36px 32px; max-width: 420px;
+      width: 100%; text-align: center;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.2);
+      transform: scale(0.85) translateY(20px);
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+    }
+    .modal-overlay.show .modal { transform: scale(1) translateY(0); }
+
+    .modal h2 {
+      font-family: 'Great Vibes', cursive; font-size: 2.3rem;
+      color: var(--deep-rose); margin-bottom: 12px;
+    }
+    .modal p { font-size: 1.08rem; line-height: 1.7; margin-bottom: 22px; }
+
+    .close-btn {
+      background: var(--deep-rose); color: white; border: none;
+      width: 40px; height: 40px; border-radius: 50%; font-size: 1.25rem;
+      cursor: pointer; position: absolute; top: 12px; right: 12px;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .sparkle {
+      position: fixed; width: 6px; height: 6px; background: #fff;
+      border-radius: 50%; box-shadow: 0 0 8px 2px rgba(255, 182, 193, 0.8);
+      pointer-events: none; z-index: 40;
+      animation: sparkle 1.2s ease-out forwards;
+    }
+    @keyframes sparkle {
+      0% { transform: scale(0); opacity: 1; }
+      50% { transform: scale(1.4); opacity: 0.9; }
+      100% { transform: scale(0); opacity: 0; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    .music-wave {
+      display: none; gap: 3px; align-items: flex-end; height: 16px; margin-left: 6px;
+    }
+    .btn.music.playing .music-wave { display: inline-flex; }
+    .music-wave span {
+      width: 3px; background: white; border-radius: 2px;
+      animation: wave 0.8s ease-in-out infinite;
+    }
+    .music-wave span:nth-child(1) { height: 6px; }
+    .music-wave span:nth-child(2) { height: 12px; animation-delay: 0.15s; }
+    .music-wave span:nth-child(3) { height: 8px; animation-delay: 0.3s; }
+    .music-wave span:nth-child(4) { height: 14px; animation-delay: 0.45s; }
+
+    @keyframes wave {
+      0%, 100% { transform: scaleY(0.5); }
+      50% { transform: scaleY(1); }
+    }
+
+    @media (max-width: 520px) {
+      .letter { padding: 30px 20px; }
+      .actions { flex-direction: column; align-items: center; }
+      .btn { width: 100%; max-width: 280px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
+  <canvas id="petals"></canvas>
+
+  <audio id="bgMusic" loop preload="auto">
+    <source src="l-italiano.mp3" type="audio/mpeg">
+    Tarayıcın ses dosyasını desteklemiyor.
+  </audio>
+
+  <div class="container">
+    <header>
+      <div class="heart-icon">💖</div>
+      <div class="names">Çiçeğim • Bitanem • Ömrüm</div>
+      <h1>Seni Düşünüyorum</h1>
+      <p class="subtitle">Ben gitsem de kalbim sende kaldı...</p>
+    </header>
+
+    <div class="letter">
+      <div class="letter-content">
+        <p>Merhaba <span class="highlight">Çiçeğim</span>,</p>
+        <p>
+          Biliyorum, şu an biraz üzgünsün. Ben gittiğim için içinin acıdığını hissediyorum.
+          Ama lütfen <span class="highlight">üzülme</span>, <span class="highlight">Bitanem</span>.
+        </p>
+        <p>
+          Gitmem, seni unuttuğum anlamına gelmiyor. Tam tersine…
+          her sabah uyandığımda, her gece yatağa girdiğimde aklımda sadece sen varsın.
+        </p>
+        <p>
+          Bu mesafe geçici. Kalbimiz arasındaki bağ ise sonsuz.
+          Seni çok seviyorum <span class="highlight">Ömrüm</span>. Çok.
+        </p>
+        <p>
+          Biraz daha sabret, yakında yine yanındayım.
+          O zamana kadar bu küçük sayfa senin için burada —
+          her açtığında hatırla: <span class="highlight">seni düşünüyorum</span>.
+        </p>
+        <div class="signature">Senin sevgilin 💕</div>
+      </div>
+    </div>
+
+    <div class="flower-row">
+      <span class="flower" data-burst>🌸</span>
+      <span class="flower" data-burst>🌷</span>
+      <span class="flower" data-burst>🌹</span>
+      <span class="flower" data-burst>🌺</span>
+      <span class="flower" data-burst>🌼</span>
+    </div>
+
+    <div class="actions">
+      <button class="btn" id="btnHug">Sana sarıldım 🤗</button>
+      <button class="btn secondary" id="btnMessage">Gizli mesaj 💌</button>
+      <button class="btn music" id="btnMusic">L’Italiano 🎵</button>
+    </div>
+
+    <div class="secret-messages">
+      <div class="msg-card">
+        <div class="locked"><span class="emoji">🔒</span> Çiçeğim için…</div>
+        <div class="unlocked">Seni ilk gördüğümde kalbim daha hızlı atmaya başlamıştı. O günden beri hiç yavaşlamadı. 💗</div>
+      </div>
+      <div class="msg-card">
+        <div class="locked"><span class="emoji">🔒</span> Bitanem’e sözüm…</div>
+        <div class="unlocked">Nerede olursam olayım, her zaman geri döneceğim. Çünkü evim sensin. 🏡</div>
+      </div>
+      <div class="msg-card">
+        <div class="locked"><span class="emoji">🔒</span> Ömrüm’e gece notu…</div>
+        <div class="unlocked">Bugün de seni düşündüm. Yarın da düşüneceğim. Her gün düşüneceğim. 🌙</div>
+      </div>
+    </div>
+
+    <footer>
+      Bu sayfa sadece <span>Çiçeğim, Bitanem ve Ömrüm</span> için yapıldı.<br>
+      Üzülme… yakında gülümseyeceğiz yine. 🌸
+    </footer>
+  </div>
+
+  <div class="modal-overlay" id="modal">
+    <div class="modal">
+      <button class="close-btn" id="closeModal">×</button>
+      <h2 id="modalTitle">Sana özel</h2>
+      <p id="modalText"></p>
+      <button class="btn" id="modalOk">Tamam, anladım 💕</button>
+    </div>
+  </div>
+
+  <script>
+    // Petals
+    const canvas = document.getElementById('petals');
+    const ctx = canvas.getContext('2d');
+    let width, height, petals = [];
+
+    function resize() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    class Petal {
+      constructor() { this.reset(true); }
+      reset(initial = false) {
+        this.x = Math.random() * width;
+        this.y = initial ? Math.random() * height : -30;
+        this.size = 8 + Math.random() * 14;
+        this.speedY = 0.6 + Math.random() * 1.4;
+        this.speedX = (Math.random() - 0.5) * 1.2;
+        this.rotation = Math.random() * Math.PI * 2;
+        this.rotationSpeed = (Math.random() - 0.5) * 0.04;
+        this.color = ['#ff9eb5','#ffb7c5','#e8a0bf','#ffc0cb','#f8c8dc','#dda0dd'][Math.floor(Math.random()*6)];
+        this.opacity = 0.5 + Math.random() * 0.4;
+        this.swing = Math.random() * Math.PI * 2;
+      }
+      update() {
+        this.y += this.speedY;
+        this.swing += 0.02;
+        this.x += this.speedX + Math.sin(this.swing) * 0.5;
+        this.rotation += this.rotationSpeed;
+        if (this.y > height + 40) this.reset();
+      }
+      draw() {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.rotation);
+        ctx.globalAlpha = this.opacity;
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.ellipse(0, 0, this.size * 0.55, this.size, 0, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+
+    for (let i = 0; i < 40; i++) petals.push(new Petal());
+    function animate() {
+      ctx.clearRect(0, 0, width, height);
+      petals.forEach(p => { p.update(); p.draw(); });
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    // Hearts & sparkles
+    function createHeart(x, y) {
+      const el = document.createElement('div');
+      el.className = 'floating-heart';
+      el.textContent = ['💕','💗','💖','❤️','🌸'][Math.floor(Math.random()*5)];
+      el.style.left = (x - 12) + 'px';
+      el.style.top = (y - 12) + 'px';
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 2800);
+    }
+
+    document.addEventListener('click', e => {
+      if (e.target.closest('.btn') || e.target.closest('.msg-card') || e.target.closest('.modal')) return;
+      createHeart(e.clientX, e.clientY);
+    });
+
+    document.querySelectorAll('[data-burst]').forEach(el => {
+      el.addEventListener('click', e => {
+        e.stopPropagation();
+        for (let i = 0; i < 8; i++) {
+          setTimeout(() => createHeart(e.clientX + (Math.random()-0.5)*60, e.clientY + (Math.random()-0.5)*40), i * 50);
+        }
+      });
+    });
+
+    document.querySelectorAll('.msg-card').forEach(card => {
+      card.addEventListener('click', () => {
+        card.classList.toggle('open');
+        if (card.classList.contains('open')) {
+          const r = card.getBoundingClientRect();
+          createHeart(r.left + r.width/2, r.top + 20);
+        }
+      });
+    });
+
+    // Modal
+    const modal = document.getElementById('modal');
+    const modalText = document.getElementById('modalText');
+    const modalTitle = document.getElementById('modalTitle');
+
+    const hugs = [
+      "Sana sıkıca sarıldım Çiçeğim… hissettin mi? 🤗💗",
+      "Kollarımın arasında güvende hisset Bitanem. Ben buradayım. 💞",
+      "Bu sarıldığımda kalbim senin için atıyor Ömrüm. 💓"
+    ];
+    const secrets = [
+      "Biliyor musun Çiçeğim? En sevdiğim şey senin gülüşün. 😊",
+      "Seninle geçirdiğim her an, hayatımın en güzel anları Bitanem. ✨",
+      "Uzak olsam da, her gece seni rüyamda görüyorum Ömrüm. 🌙"
+    ];
+
+    document.getElementById('btnHug').onclick = () => {
+      modalTitle.textContent = "Sana sarıldım";
+      modalText.innerHTML = hugs[Math.floor(Math.random()*hugs.length)];
+      modal.classList.add('show');
+      for (let i = 0; i < 10; i++) {
+        setTimeout(() => createHeart(innerWidth/2 + (Math.random()-0.5)*200, innerHeight/2 + (Math.random()-0.5)*100), i*70);
+      }
+    };
+
+    document.getElementById('btnMessage').onclick = () => {
+      modalTitle.textContent = "Gizli mesaj";
+      modalText.innerHTML = secrets[Math.floor(Math.random()*secrets.length)];
+      modal.classList.add('show');
+    };
+
+    document.getElementById('closeModal').onclick = () => modal.classList.remove('show');
+    document.getElementById('modalOk').onclick = () => modal.classList.remove('show');
+    modal.onclick = e => { if (e.target === modal) modal.classList.remove('show'); };
+
+    // ========== MÜZİK (L'Italiano) ==========
+    const music = document.getElementById('bgMusic');
+    const btnMusic = document.getElementById('btnMusic');
+    let isPlaying = false;
+
+    music.volume = 0.6;
+
+    btnMusic.addEventListener('click', async () => {
+      if (isPlaying) {
+        music.pause();
+        isPlaying = false;
+        btnMusic.classList.remove('playing');
+        btnMusic.innerHTML = 'L’Italiano 🎵';
+      } else {
+        try {
+          await music.play();
+          isPlaying = true;
+          btnMusic.classList.add('playing');
+          btnMusic.innerHTML = 'Durdur 🎵 <span class="music-wave"><span></span><span></span><span></span><span></span></span>';
+        } catch (err) {
+          console.error(err);
+          alert(
+            "Müzik çalmıyor!\n\n" +
+            "Kontrol et:\n" +
+            "1. Dosya adı tam olarak → l-italiano.mp3\n" +
+            "2. index.html ile aynı klasörde mi?\n" +
+            "3. Siteyi canlı sunucuda açıyor musun? (sadece dosyaya çift tıklayınca bazen çalışmaz)"
+          );
+        }
+      }
+    });
+
+    music.addEventListener('ended', () => {
+      isPlaying = false;
+      btnMusic.classList.remove('playing');
+      btnMusic.innerHTML = 'L’Italiano 🎵';
+    });
+
+    // Arada kalp
+    setInterval(() => {
+      if (Math.random() > 0.7) {
+        createHeart(Math.random() * innerWidth, innerHeight - 40);
+      }
+    }, 2500);
+  </script>
+</body>
+</html>
